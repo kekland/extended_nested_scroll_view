@@ -1709,7 +1709,8 @@ class _NestedScrollPosition extends ScrollPosition
 
   void updateCanDrag(double totalExtent) {
     context.setCanDrag(totalExtent > (viewportDimension - maxScrollExtent) ||
-        minScrollExtent != maxScrollExtent);
+        minScrollExtent != maxScrollExtent ||
+        physics.shouldAcceptUserOffset(this));
   }
 
   @override
